@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  httpd:
+    image: httpd:alpine
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./httpd/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro
+      - ./httpd/password:/usr/local/apache2/conf/password:ro
+      - ./httpd/api.cgi:/usr/local/apache2/htdocs/api.cgi:ro
